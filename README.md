@@ -13,7 +13,7 @@ To pull the collected frames, use the command below<br>
 adb pull /sdcard/CaptureApp
 ```
 I created "".nomedia" file  just to make sure collected data doesn't appear on galleries or on other apps.<br>
-I provided jupyter notebook file(<b>Tab S6 Data.ipynb</b>) to help you parse the data collected by MLKitGazeDataCollectingButton, and also show you how to  train Gaze Estimation Model used for <a href="https://github.com/JyothiSwaroopReddy07/Mobile_Gaze_App"><b>MOBILE GAZE</b></a><br>
+I provided jupyter notebook file(<b>Tab S6 Data.ipynb</b>) to help you parse the data collected by GazeDataCollection, and also show you how to  train Gaze Estimation Model used for <a href="https://github.com/JyothiSwaroopReddy07/Mobile_Gaze_App"><b>MOBILE GAZE</b></a><br>
 
 ## Details
 This app collects various data that are used for gaze estimation based on papers. <br>
@@ -43,7 +43,7 @@ Unless, it will be outlier data that will harm your model accuracy.<br>
 
 ### Parsing Collected Data
 
-<a href="https://github.com/JyothiSwaroopReddy07/Gaze_Data_Collection/blob/master/Data%20parsing.ipynb">Data Parsing.ipynb</a> is about parsing the data collected from the Gaze_Data_Collection. <br>
+<a href="https://github.com/JyothiSwaroopReddy07/Gaze_Data_Collection/blob/main/Data%20parsing.ipynb">Data Parsing.ipynb</a> is about parsing the data collected from the Gaze_Data_Collection. <br>
 Suppose your collected data is stored in <b>/special/jyo/MotoG71/swaroop/</b> directory<br>
 The directory structure will be like below<br>
 
@@ -77,10 +77,10 @@ I provide notebook file that show the process of making the dataset
 ### Training Gaze Estimation Model
 <img src="https://user-images.githubusercontent.com/30307587/109145286-a6ff7200-77a5-11eb-86ff-41925981af10.png" width=800/>
 
-As mentioned in the GAZEL paper, we used multiple inputs. The <a href="https://github.com/JyothiSwaroopReddy07/Gaze_Data_Collection/blob/master/Data%20parsing.ipynb">Data Parsing.ipynb</a> shows how to parse these inputs, and <a href="https://github.com/JyothiSwaroopReddy07/Gaze_Data_Collection/blob/master/Gaze_detector.ipynb">GAZE_Detector.ipynb</a> shows how to construct toy model.<br>
+As mentioned in the GAZEL paper, we used multiple inputs. The <a href="https://github.com/JyothiSwaroopReddy07/Gaze_Data_Collection/blob/main/Data%20parsing.ipynb">Data Parsing.ipynb</a> shows how to parse these inputs, and <a href="https://github.com/JyothiSwaroopReddy07/Gaze_Data_Collection/blob/main/Gaze_detector.ipynb">GAZE_Detector.ipynb</a> shows how to construct toy model.<br>
 We won't provide pre-trained model, and the 10 participants' image data due to the right of publicity.<br>
-But if you follow the written instruction, collect your gaze data with <a href="https://github.com/JyothiSwaroopReddy07/Gaze_Data_Collection">MLKitGazeDataCollectingButton</a> it will take about 30 minutes to collect over 5000 samples. Then use the notebook files to parse & create your own model. You must follow the TFLite conversion guideline before you import your tflite model on <a href="https://github.com/JyothiSwaroopReddy07/Mobile_Gaze_App">Mobile GAZE</a>.
-<b>[Note] For the evaluation  we used data collected from 10 participants to train general model and calibrated it by each user's implicitly collected frames by Data Collecting Launcher. Not the toy model in the GAZEL.ipynb file</b>
+But if you follow the written instruction, collect your gaze data with <a href="https://github.com/JyothiSwaroopReddy07/Gaze_Data_Collection">GazeDataCollection</a> it will take about 30 minutes to collect over 5000 samples. Then use the notebook files to parse & create your own model. You must follow the TFLite conversion guideline before you import your tflite model on <a href="https://github.com/JyothiSwaroopReddy07/Mobile_Gaze_App">Mobile GAZE</a>.
+<b>[Note] For the evaluation  we used data collected from 10 participants to train general model and calibrated it by each user's implicitly collected frames by Data Collecting Launcher. Not the toy model in the GAZE_detector.ipynb file</b>
 
 ### [Important] TensorFlow Lite Conversion Guideline!
 If you don't follow the guideline you would get errors like <a href="https://github.com/tensorflow/tensorflow/issues/19982"><b>this</b></a> when using TFLite interpreter in the Android device<br>

@@ -1,7 +1,7 @@
 # Gaze Data Collecting Application
 The app is used to collect and build dataset for training and testing.
 
-### Sample Video
+
 This work is about collecting Ground-truth Gaze Data.<br>
 I tested it on Galaxy Tab S6, Galaxy S9+, Galaxy S10+, Pixel 2 XL, Pixel 3 XL.<br>
 Depending on the performance of processor, this collecting app will run at 10-20FPS.<br>
@@ -77,7 +77,7 @@ I provide notebook file that show the process of making the dataset
 ### Training Gaze Estimation Model
 <img src="https://user-images.githubusercontent.com/30307587/109145286-a6ff7200-77a5-11eb-86ff-41925981af10.png" width=800/>
 
-As mentioned in the GAZEL paper, we used multiple inputs. The <a href="https://github.com/JyothiSwaroopReddy07/Gaze_Data_Collection/blob/master/Data%20parsing.ipynb">Data Parsing.ipynb</a> shows how to parse these inputs, and <a href="https://github.com/JyothiSwaroopReddy07/Gaze_Data_Collection/blob/master/Gaze_detector.ipynb">GAZEL.ipynb</a> shows how to construct toy model.<br>
+As mentioned in the GAZEL paper, we used multiple inputs. The <a href="https://github.com/JyothiSwaroopReddy07/Gaze_Data_Collection/blob/master/Data%20parsing.ipynb">Data Parsing.ipynb</a> shows how to parse these inputs, and <a href="https://github.com/JyothiSwaroopReddy07/Gaze_Data_Collection/blob/master/Gaze_detector.ipynb">GAZE_Detector.ipynb</a> shows how to construct toy model.<br>
 We won't provide pre-trained model, and the 10 participants' image data due to the right of publicity.<br>
 But if you follow the written instruction, collect your gaze data with <a href="https://github.com/JyothiSwaroopReddy07/Gaze_Data_Collection">MLKitGazeDataCollectingButton</a> it will take about 30 minutes to collect over 5000 samples. Then use the notebook files to parse & create your own model. You must follow the TFLite conversion guideline before you import your tflite model on <a href="https://github.com/JyothiSwaroopReddy07/Mobile_Gaze_App">Mobile GAZE</a>.
 <b>[Note] For the evaluation  we used data collected from 10 participants to train general model and calibrated it by each user's implicitly collected frames by Data Collecting Launcher. Not the toy model in the GAZEL.ipynb file</b>

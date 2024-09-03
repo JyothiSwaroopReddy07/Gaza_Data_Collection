@@ -48,7 +48,7 @@ Suppose your collected data is stored in <b>/special/jyo/MotoG71/swaroop/</b> di
 The directory structure will be like below<br>
 
 ```
-▼ /special/jbpark/TabS6/Joonbeom/
+▼ /special/jyothiswaroop/MotoG71/reddy/
 	▶ face
 	▶ facegrid
 	▶ lefteye
